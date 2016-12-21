@@ -28,6 +28,7 @@ public:
     InitManager_IMG();
     ~InitManager_IMG();
     SDL_Surface* loadimage(const char* FileName);
+    SDL_Texture* loadtexture(SDL_Renderer* rnd,const char* Filename);
 };
 class InitManager_Mix
 {
@@ -41,6 +42,8 @@ extern InitManager_IMG sysimg;
 extern InitManager_TTF systtf;
 extern InitManager_Mix sysmix;
 
+/// Now We use ResourceManager instead.
+/*
 class InitTextureManager
 {
 public:
@@ -53,3 +56,4 @@ private:
 };
 
 extern InitTextureManager systext;
+*/

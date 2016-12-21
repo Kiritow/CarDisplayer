@@ -20,14 +20,14 @@ SDL_Texture* RenderUTF8(SDL_Renderer* rnd,TTF_Font* font,const char* Text,SDL_Co
     return texture;
 }
 
-void TextureDraw(SDL_Renderer* rnd,SDL_Texture* texture,int x,int y)
+void TextureDraw(SDL_Renderer* rnd,SDL_Texture* texture,int dstx,int dsty)
 {
     if(!rnd||!texture) return;
     int w,h;
     SDL_QueryTexture(texture,NULL,NULL,&w,&h);
     SDL_Rect rect;
-    rect.x=x;
-    rect.y=y;
+    rect.x=dstx;
+    rect.y=dsty;
     rect.w=w;
     rect.h=h;
     SDL_RenderCopy(rnd,texture,NULL,&rect);

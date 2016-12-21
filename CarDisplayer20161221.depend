@@ -2,10 +2,12 @@
 1482291220 source:d:\codeblocks_codes\cardisplayer20161221\mini_engine_min.cpp
 	"mini_engine_min.h"
 
-1482291111 d:\codeblocks_codes\cardisplayer20161221\mini_engine_min.h
+1482311455 d:\codeblocks_codes\cardisplayer20161221\mini_engine_min.h
 	"config.h"
 	"InitManager.h"
 	"ResourceManager.h"
+	"AnimationManager.h"
+	"Game.h"
 
 1476881990 d:\codeblocks_codes\cardisplayer20161221\sdl2\sdl.h
 	"SDL_main.h"
@@ -346,10 +348,10 @@
 	"begin_code.h"
 	"close_code.h"
 
-1482291287 source:d:\codeblocks_codes\cardisplayer20161221\main.cpp
+1482319154 source:d:\codeblocks_codes\cardisplayer20161221\main.cpp
 	"mini_engine_min.h"
 
-1482291078 source:d:\codeblocks_codes\cardisplayer20161221\config.cpp
+1482296909 source:d:\codeblocks_codes\cardisplayer20161221\config.cpp
 	"config.h"
 
 1482291006 d:\codeblocks_codes\cardisplayer20161221\config.h
@@ -365,28 +367,45 @@
 	"SDL2/SDL_image.h"
 	"SDL2/SDL_Mixer.h"
 
-1481111486 d:\codeblocks_codes\cardisplayer20161221\sdl_engine.h
+1482311025 d:\codeblocks_codes\cardisplayer20161221\sdl_engine.h
 	"basic_config.h"
 
-1481340753 source:d:\codeblocks_codes\cardisplayer20161221\initmanager.cpp
+1482310790 source:d:\codeblocks_codes\cardisplayer20161221\initmanager.cpp
 	"InitManager.h"
 
-1481340398 d:\codeblocks_codes\cardisplayer20161221\initmanager.h
+1482310774 d:\codeblocks_codes\cardisplayer20161221\initmanager.h
 	"config.h"
 	<vector>
 
-1481680397 d:\codeblocks_codes\cardisplayer20161221\resourcemanager.h
+1482311554 d:\codeblocks_codes\cardisplayer20161221\resourcemanager.h
 	"config.h"
 
 1482291159 source:d:\codeblocks_codes\cardisplayer20161221\basic_config.cpp
 	"basic_config.h"
 
-1481698409 source:d:\codeblocks_codes\cardisplayer20161221\resourcemanager.cpp
+1482311570 source:d:\codeblocks_codes\cardisplayer20161221\resourcemanager.cpp
 	"ResourceManager.h"
 	<vector>
 	<map>
 	<string>
 
-1481645654 source:d:\codeblocks_codes\cardisplayer20161221\sdl_engine.cpp
+1482311014 source:d:\codeblocks_codes\cardisplayer20161221\sdl_engine.cpp
 	"sdl_engine.h"
+
+1482309389 d:\codeblocks_codes\cardisplayer20161221\game.h
+	"config.h"
+
+1482322667 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
+	"Game.h"
+	"ResourceManager.h"
+	"AnimationManager.h"
+
+1482322642 d:\codeblocks_codes\cardisplayer20161221\animationmanager.h
+	"config.h"
+	<functional>
+
+1482322702 source:d:\codeblocks_codes\cardisplayer20161221\animationmanager.cpp
+	"AnimationManager.h"
+	<vector>
+	<algorithm>
 

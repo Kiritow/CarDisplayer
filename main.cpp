@@ -7,7 +7,8 @@ int main()
     rnd=SDL_CreateRenderer(wnd,-1,SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
     font=TTF_OpenFont("msyh.ttf",18);
     mlog("Window Opened. Renderer Ready. Font Ready.");
-    //Game::Main();
+    animemanager.setRenderer(rnd);
+    Game::Main();
     mlog("Start Finalize...");
     TTF_CloseFont(font);
     SDL_DestroyRenderer(rnd);

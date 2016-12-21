@@ -1,8 +1,9 @@
+#pragma once
 #include "config.h"
 
 typedef int ResourceIndex;
 
-struct res_pimpl;
+
 
 class ResourceManager
 {
@@ -17,6 +18,7 @@ private:
     int RequestLoadPicture(ResourceIndex idx);
     void TryFreeMemory();
 private:
+    struct res_pimpl;
     res_pimpl* pdata;
 
 };

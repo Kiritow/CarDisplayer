@@ -1,10 +1,6 @@
 #include "config.h"
 
 /******************************************************************************/
-/// Log System
-
-
-/******************************************************************************/
 /// InitManager
 #include "InitManager.h"
 
@@ -18,7 +14,10 @@ extern const int winh;
 /// Resource Manager
 #include "ResourceManager.h"
 
-namespace Game
-{
-    void Main();
-}
+/******************************************************************************/
+/// Animation Manager
+#include "AnimationManager.h"
+
+/******************************************************************************/
+/// Game
+#include "Game.h"

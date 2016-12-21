@@ -14,7 +14,7 @@ struct vdpack
     int w,h;
 };
 
-struct res_pimpl
+struct ResourceManager::res_pimpl
 {
     vector<vdpack> vec;
     map<int,bool> gmap;

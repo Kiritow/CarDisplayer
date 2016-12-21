@@ -26,6 +26,11 @@ SDL_Surface* InitManager_IMG::loadimage(const char* Filename)
     return IMG_Load(Filename);
 }
 
+SDL_Texture* InitManager_IMG::loadtexture(SDL_Renderer* rnd,const char* Filename)
+{
+    return IMG_LoadTexture(rnd,Filename);
+}
+
 InitManager_IMG::~InitManager_IMG()
 {
     IMG_Quit();
@@ -104,29 +109,3 @@ InitManager_SDL syssdl;
 InitManager_IMG sysimg;
 InitManager_TTF systtf;
 InitManager_Mix sysmix;
-
-InitTextureManager::InitTextureManager()
-{
-
-}
-
-InitTextureManager::~InitTextureManager()
-{
-    while(vec.size())
-    {
-        SDL_DestroyTexture(vec.back());
-        vec.pop_back();
-    }
-}
-
-void InitTextureManager::add(SDL_Texture* texture)
-{
-    vec.push_back(texture);
-}
-
-void InitTextureManager::pop()
-{
-    if(vec.size()) vec.pop_back();
-}
-
-InitTextureManager systext;
