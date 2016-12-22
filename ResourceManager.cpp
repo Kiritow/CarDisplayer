@@ -41,10 +41,36 @@ ResourceIndex ResourceManager::LoadPicture(const char* filename,int must_in_mem)
         text=IMG_LoadTexture(rnd,filename);
         if(text==NULL)
         {
-            printf("ResourceManager::LoadPicture Failed: %s\n",SDL_GetError());
-            return -1;
+            thread_local char errMsg[1024];
+            memset(errMsg,0,1024);
+            strcpy(errMsg,SDL_GetError());
+            printf("ResourceManager::LoadPicture : Failed Recursively : %s\n",errMsg);
+            /// If Error is "Out of memory" then store it in Vector, but don't push it into GMAP.
+            /// We can call this "Cache of Infos"
+            if(strstr(errMsg,"Out of memory")!=NULL)
+            {
+                /// Low Memory is the cause.
+                vdpack notgoodpack;
+                notgoodpack.text=NULL;
+                notgoodpack.w=0;
+                notgoodpack.h=0;
+                notgoodpack.name=filename;
+                notgoodpack.isvalid=0;
+                notgoodpack.inuse=0;
+                pdata->vec.push_back(notgoodpack);
+
+                printf("ResourceManager::LoadPicture : Info Stored. (Not Fully Loaded) (%d)\n",pdata->vec.size()-1);
+                return pdata->vec.size()-1;
+            }
+            else
+            {
+                /// Other Thing Cause This.
+                printf("ResourceManager::LoadPicture : Fatal Failure.\n");
+                return -1;
+            }
         }
     }
+
     vdpack thispack;
     thispack.text=text;
     SDL_QueryTexture(text,NULL,NULL,&thispack.w,&thispack.h);
@@ -148,3 +174,30 @@ void ResourceManager::NotInUse(ResourceIndex idx)
 }
 
 ResourceManager resmanager;
+
+
+struct resptr::impl
+{
+    ResourceManager* pres;
+    ResourceIndex idx;
+    SDL_Texture* text;
+};
+
+resptr::resptr(ResourceIndex index,ResourceManager* pResManager_in)
+{
+    pimpl=new impl;
+    pimpl->pres=pResManager_in;
+    pimpl->idx=index;
+    pimpl->text=pimpl->pres->GetPicture(pimpl->idx);
+}
+
+resptr::operator SDL_Texture*()
+{
+    return pimpl->text;
+}
+
+resptr::~resptr()
+{
+    pimpl->pres->NotInUse(pimpl->idx);
+    delete pimpl;
+}

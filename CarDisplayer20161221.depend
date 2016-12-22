@@ -348,7 +348,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1482319154 source:d:\codeblocks_codes\cardisplayer20161221\main.cpp
+1482386153 source:d:\codeblocks_codes\cardisplayer20161221\main.cpp
 	"mini_engine_min.h"
 
 1482296909 source:d:\codeblocks_codes\cardisplayer20161221\config.cpp
@@ -377,13 +377,13 @@
 	"config.h"
 	<vector>
 
-1482311554 d:\codeblocks_codes\cardisplayer20161221\resourcemanager.h
+1482384861 d:\codeblocks_codes\cardisplayer20161221\resourcemanager.h
 	"config.h"
 
 1482291159 source:d:\codeblocks_codes\cardisplayer20161221\basic_config.cpp
 	"basic_config.h"
 
-1482311570 source:d:\codeblocks_codes\cardisplayer20161221\resourcemanager.cpp
+1482386136 source:d:\codeblocks_codes\cardisplayer20161221\resourcemanager.cpp
 	"ResourceManager.h"
 	<vector>
 	<map>
@@ -395,7 +395,7 @@
 1482309389 d:\codeblocks_codes\cardisplayer20161221\game.h
 	"config.h"
 
-1482322667 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
+1482386358 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
 	"Game.h"
 	"ResourceManager.h"
 	"AnimationManager.h"

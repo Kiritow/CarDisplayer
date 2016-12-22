@@ -24,3 +24,14 @@ private:
 };
 
 extern ResourceManager resmanager;
+
+class resptr
+{
+public:
+    resptr(ResourceIndex index,ResourceManager* pResManager_in=&resmanager);
+    ~resptr();
+    operator SDL_Texture* ();
+private:
+    struct impl;
+    impl* pimpl;
+};
