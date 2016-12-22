@@ -58,6 +58,8 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="mini_engine_min.cpp" />
 		<Unit filename="mini_engine_min.h" />
+		<Unit filename="resources_list.hpp" />
+		<Unit filename="resources_load.hpp" />
 		<Unit filename="sdl_engine.cpp" />
 		<Unit filename="sdl_engine.h" />
 		<Extensions>

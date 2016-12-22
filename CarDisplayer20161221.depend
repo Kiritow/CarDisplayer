@@ -395,10 +395,13 @@
 1482309389 d:\codeblocks_codes\cardisplayer20161221\game.h
 	"config.h"
 
-1482395405 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
+1482404113 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
 	"Game.h"
 	"ResourceManager.h"
 	"AnimationManager.h"
+	"EventManager.h"
+	"resources_list.hpp"
+	"resources_load.hpp"
 
 1482322642 d:\codeblocks_codes\cardisplayer20161221\animationmanager.h
 	"config.h"
@@ -417,4 +420,8 @@
 1482397895 d:\codeblocks_codes\cardisplayer20161221\eventmanager.h
 	"config.h"
 	<functional>
+
+1482404098 d:\codeblocks_codes\cardisplayer20161221\resources_list.hpp
+
+1482404339 d:\codeblocks_codes\cardisplayer20161221\resources_load.hpp
 

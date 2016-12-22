@@ -5,8 +5,22 @@
 
 #define DEF_FPS 24
 
+#define PNAME(pictureType,pictureID) _pic_##pictureType##_##pictureID
+#define PIC(pictureType,pictureID) int PNAME(pictureType,pictureID)=-1;
+#define PLOAD(pictureType,pictureID) PNAME(pictureType,pictureID)=resmanager.LoadPicture("img\\" #pictureType "\\" #pictureType "_" #pictureID ".png");
+#define PLOADX(pictureType,pictureID) PNAME(pictureType,pictureID)=resmanager.LoadPicture("img\\" #pictureType "\\" #pictureType "_" #pictureID ".jpg");
+
+#include "resources_list.hpp"
+
 namespace Game
 {
+    int procInit(void* args)
+    {
+        int* pRunning=(int*)args;
+        #include "resources_load.hpp"
+        *pRunning=0;
+        return 0;
+    }
     void Init()
     {
         resmanager.LoadPicture("img\\loading\\loading_anim_01.png",1);
@@ -39,11 +53,17 @@ namespace Game
         EventManager em;
         int running=1;
         int need_update=1;
+
+        SDL_Thread* td=SDL_CreateThread(procInit,"Init Thread",&running);
+
         while(ls.playNext()>=0&&running)
         {
             em.pollNext(running,need_update);
             SDL_Delay(1000/DEF_FPS);
         }
+
+        int ret;
+        SDL_WaitThread(td,&ret);
     }
     void Main()
     {
