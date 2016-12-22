@@ -29,6 +29,8 @@ class resptr
 {
 public:
     resptr(ResourceIndex index,ResourceManager* pResManager_in=&resmanager);
+    void load();
+    void unload();
     ~resptr();
     operator SDL_Texture* ();
 private:

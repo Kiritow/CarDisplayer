@@ -188,7 +188,7 @@ resptr::resptr(ResourceIndex index,ResourceManager* pResManager_in)
     pimpl=new impl;
     pimpl->pres=pResManager_in;
     pimpl->idx=index;
-    pimpl->text=pimpl->pres->GetPicture(pimpl->idx);
+    load();
 }
 
 resptr::operator SDL_Texture*()
@@ -198,6 +198,17 @@ resptr::operator SDL_Texture*()
 
 resptr::~resptr()
 {
-    pimpl->pres->NotInUse(pimpl->idx);
+    unload();
     delete pimpl;
+}
+
+void resptr::load()
+{
+    pimpl->text=pimpl->pres->GetPicture(pimpl->idx);
+}
+
+void resptr::unload()
+{
+    pimpl->pres->NotInUse(pimpl->idx);
+    pimpl->text=NULL;
 }

@@ -86,6 +86,7 @@ struct PlayList::impl
 PlayList::PlayList()
 {
     pimpl=new impl;
+    attachAnimationManager(&animemanager);
 }
 PlayList::~PlayList()
 {
