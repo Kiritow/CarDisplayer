@@ -133,7 +133,7 @@ PLOAD(minibus,10_2_history);
 PLOAD(minibus,10_argument);
 
 /***************
-PLOADk up
+pick up
 ***************/
 PLOADX(pick_up,1);
 PLOADX(pick_up,2);
@@ -240,6 +240,9 @@ PLOADX(SUV,10);
 PLOAD(SUV,1_history);
 PLOAD(SUV,1_argument);
 
+PLOAD(SUV,8_history);
+PLOAD(SUV,8_argument);
+
 PLOAD(SUV,2_1_history);
 PLOAD(SUV,2_2_history);
 PLOAD(SUV,2_argument);
@@ -263,10 +266,6 @@ PLOAD(SUV,6_argument);
 PLOAD(SUV,7_1_history);
 PLOAD(SUV,7_2_history);
 PLOAD(SUV,7_argument);
-
-PLOAD(SUV,8_1_history);
-PLOAD(SUV,8_2_history);
-PLOAD(SUV,8_argument);
 
 /// TODO
 PLOAD(SUV,9_1_history);

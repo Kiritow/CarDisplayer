@@ -2,6 +2,8 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <windows.h>
+#include <psapi.h>
 using namespace std;
 
 
@@ -30,7 +32,17 @@ ResourceManager::~ResourceManager()
     delete pdata;
 }
 
-ResourceIndex ResourceManager::LoadPicture(const char* filename,int must_in_mem)
+bool ResourceManager::WillLowMemory()
+{
+    HANDLE hand=GetCurrentProcess();
+    PROCESS_MEMORY_COUNTERS pmc;
+    GetProcessMemoryInfo(hand,&pmc,sizeof(pmc));
+    int m=pmc.WorkingSetSize/1024/1024;
+    printf("System: Memory In Use: %d MB\n",m);
+    return m>1228;/// 1.2*1024MB
+}
+
+ResourceIndex ResourceManager::LoadPicture(const char* filename,int load_now)
 {
     printf("ResourceManager::LoadPicture : Loading %s\n",filename);
     SDL_Texture* text=IMG_LoadTexture(rnd,filename);
@@ -66,8 +78,28 @@ ResourceIndex ResourceManager::LoadPicture(const char* filename,int must_in_mem)
             {
                 /// Other Thing Cause This.
                 printf("ResourceManager::LoadPicture : Fatal Failure.\n");
+                system("pause");
                 return -1;
             }
+        }
+    }
+
+    if(load_now==0)
+    {
+        if(WillLowMemory())
+        {
+            SDL_DestroyTexture(text);
+            vdpack tpack;
+            tpack.text=NULL;
+            tpack.w=1;
+            tpack.h=1;
+            tpack.name=filename;
+            tpack.isvalid=0;
+            tpack.inuse=0;
+            pdata->vec.push_back(tpack);
+
+            printf("ResourceManager::LoadPicture : Loaded and Freed onLowMemory. (%d)\n",pdata->vec.size()-1);
+            return pdata->vec.size()-1;
         }
     }
 
@@ -87,10 +119,19 @@ ResourceIndex ResourceManager::LoadPicture(const char* filename,int must_in_mem)
 
 SDL_Rect ResourceManager::GetSize(ResourceIndex idx)
 {
-    SDL_Rect rect;
-    rect.w=pdata->vec.at(idx).w;
-    rect.h=pdata->vec.at(idx).h;
-    return rect;
+    if(pdata->vec.at(idx).isvalid)
+    {
+        SDL_Rect rect;
+        rect.w=pdata->vec.at(idx).w;
+        rect.h=pdata->vec.at(idx).h;
+        return rect;
+    }
+    else
+    {
+        /// WARNING! Sometimes this may call infinite-loop.
+        GetPicture(idx);
+        return GetSize(idx);
+    }
 }
 
 void ResourceManager::TryFreeMemory()

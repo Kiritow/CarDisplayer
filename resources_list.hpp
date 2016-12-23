@@ -240,6 +240,9 @@ PIC(SUV,10);
 PIC(SUV,1_history);
 PIC(SUV,1_argument);
 
+PIC(SUV,8_history);
+PIC(SUV,8_argument);
+
 PIC(SUV,2_1_history);
 PIC(SUV,2_2_history);
 PIC(SUV,2_argument);
@@ -263,10 +266,6 @@ PIC(SUV,6_argument);
 PIC(SUV,7_1_history);
 PIC(SUV,7_2_history);
 PIC(SUV,7_argument);
-
-PIC(SUV,8_1_history);
-PIC(SUV,8_2_history);
-PIC(SUV,8_argument);
 
 /// TODO
 PIC(SUV,9_1_history);

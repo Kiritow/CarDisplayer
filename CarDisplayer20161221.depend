@@ -377,17 +377,19 @@
 	"config.h"
 	<vector>
 
-1482394664 d:\codeblocks_codes\cardisplayer20161221\resourcemanager.h
+1482483561 d:\codeblocks_codes\cardisplayer20161221\resourcemanager.h
 	"config.h"
 
 1482291159 source:d:\codeblocks_codes\cardisplayer20161221\basic_config.cpp
 	"basic_config.h"
 
-1482394841 source:d:\codeblocks_codes\cardisplayer20161221\resourcemanager.cpp
+1482485014 source:d:\codeblocks_codes\cardisplayer20161221\resourcemanager.cpp
 	"ResourceManager.h"
 	<vector>
 	<map>
 	<string>
+	<windows.h>
+	<psapi.h>
 
 1482311014 source:d:\codeblocks_codes\cardisplayer20161221\sdl_engine.cpp
 	"sdl_engine.h"
@@ -395,11 +397,12 @@
 1482309389 d:\codeblocks_codes\cardisplayer20161221\game.h
 	"config.h"
 
-1482404113 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
+1482486418 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
 	"Game.h"
 	"ResourceManager.h"
 	"AnimationManager.h"
 	"EventManager.h"
+	"xbutton.h"
 	"resources_list.hpp"
 	"resources_load.hpp"
 
@@ -421,7 +424,14 @@
 	"config.h"
 	<functional>
 
-1482404098 d:\codeblocks_codes\cardisplayer20161221\resources_list.hpp
+1482484721 d:\codeblocks_codes\cardisplayer20161221\resources_list.hpp
 
-1482404339 d:\codeblocks_codes\cardisplayer20161221\resources_load.hpp
+1482485321 d:\codeblocks_codes\cardisplayer20161221\resources_load.hpp
+
+1482486340 d:\codeblocks_codes\cardisplayer20161221\xbutton.h
+	"config.h"
+	"EventManager.h"
+
+1482486312 source:d:\codeblocks_codes\cardisplayer20161221\xbutton.cpp
+	"xbutton.h"
 

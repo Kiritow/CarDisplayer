@@ -2,6 +2,7 @@
 #include "ResourceManager.h"
 #include "AnimationManager.h"
 #include "EventManager.h"
+#include "xbutton.h"
 
 #define DEF_FPS 24
 
@@ -65,8 +66,22 @@ namespace Game
         int ret;
         SDL_WaitThread(td,&ret);
     }
+    void Test()
+    {
+        EventManager evm;
+        xbutton b;
+        b.attachEventManager(evm);
+        int running;
+        int need_update;
+        while(1)
+        {
+            if(evm.pollNext(running,need_update)>0);
+            else SDL_Delay(1);
+        }
+    }
     void Main()
     {
+        Test();
         Init();
     }
 }

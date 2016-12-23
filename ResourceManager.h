@@ -10,17 +10,17 @@ class ResourceManager
 public:
     ResourceManager();
     ~ResourceManager();
-    ResourceIndex LoadPicture(const char* filename,int must_in_mem=0);
+    ResourceIndex LoadPicture(const char* filename,int load_now=0);
     SDL_Texture* GetPicture(ResourceIndex idx);
     void NotInUse(ResourceIndex idx);
     SDL_Rect GetSize(ResourceIndex idx);
 private:
     int RequestLoadPicture(ResourceIndex idx);
     void TryFreeMemory();
+    bool WillLowMemory();
 private:
     struct res_pimpl;
     res_pimpl* pdata;
-
 };
 
 extern ResourceManager resmanager;

@@ -16,6 +16,7 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
+					<Add option="-lpsapi" />
 					<Add library="SDL2_Libs/SDL2.lib" />
 					<Add library="SDL2_Libs/SDL2_image.lib" />
 					<Add library="SDL2_Libs/SDL2_mixer.lib" />
@@ -62,6 +63,8 @@
 		<Unit filename="resources_load.hpp" />
 		<Unit filename="sdl_engine.cpp" />
 		<Unit filename="sdl_engine.h" />
+		<Unit filename="xbutton.cpp" />
+		<Unit filename="xbutton.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
