@@ -11,8 +11,6 @@ PIC(automobile,7);
 PIC(automobile,8);
 PIC(automobile,9);
 PIC(automobile,10);
-PIC(automobile,11);
-PIC(automobile,12);
 
 PIC(automobile,1_1_history);
 PIC(automobile,1_2_history);
@@ -50,12 +48,6 @@ PIC(automobile,9_argument);
 
 PIC(automobile,10_history);
 PIC(automobile,10_argument);
-
-PIC(automobile,11_history);
-PIC(automobile,11_argument);
-
-PIC(automobile,12_history);
-PIC(automobile,12_argument);
 
 /***************
 bus
@@ -192,7 +184,6 @@ PIC(sports_car,7);
 PIC(sports_car,8);
 PIC(sports_car,9);
 PIC(sports_car,10);
-PIC(sports_car,11);
 
 PIC(sports_car,1_history);
 PIC(sports_car,1_argument);
@@ -204,8 +195,6 @@ PIC(sports_car,9_history);
 PIC(sports_car,9_argument);
 PIC(sports_car,10_history);
 PIC(sports_car,10_argument);
-PIC(sports_car,11_history);
-PIC(sports_car,11_argument);
 
 PIC(sports_car,3_1_history);
 PIC(sports_car,3_2_history);
@@ -305,3 +294,40 @@ PIC(truck,4_argument);
 
 PIC(truck,5_history);
 PIC(truck,5_argument);
+
+/// board
+PIC(board,1st);
+PIC(board,2nd);
+PIC(board,game1);
+PIC(board,game2);
+PIC(board,game_automobile);
+PIC(board,game_pick_up);
+PIC(board,game_suv);
+PIC(board,game_bus);
+PIC(board,game_minibus);
+PIC(board,game_sports_car);
+PIC(board,game_truck);
+
+/// Robot
+PIC(robot,down_stand);
+PIC(robot,down_move_1);
+PIC(robot,down_move_2);
+
+PIC(robot,left_stand);
+PIC(robot,left_move_1);
+PIC(robot,left_move_2);
+
+PIC(robot,right_stand);
+PIC(robot,right_move_1);
+PIC(robot,right_move_2);
+
+PIC(robot,up_stand);
+PIC(robot,up_move_1);
+PIC(robot,up_move_2);
+
+/// buttons
+PIC(button,argument);
+PIC(button,argument_highlight);
+PIC(button,history);
+PIC(button,history_highlight);
+

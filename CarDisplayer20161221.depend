@@ -348,15 +348,16 @@
 	"begin_code.h"
 	"close_code.h"
 
-1482386153 source:d:\codeblocks_codes\cardisplayer20161221\main.cpp
+1482818585 source:d:\codeblocks_codes\cardisplayer20161221\main.cpp
 	"mini_engine_min.h"
 
-1482296909 source:d:\codeblocks_codes\cardisplayer20161221\config.cpp
+1482842891 source:d:\codeblocks_codes\cardisplayer20161221\config.cpp
 	"config.h"
 
-1482291006 d:\codeblocks_codes\cardisplayer20161221\config.h
+1482842924 d:\codeblocks_codes\cardisplayer20161221\config.h
 	"basic_config.h"
 	"sdl_engine.h"
+	<functional>
 
 1482291350 d:\codeblocks_codes\cardisplayer20161221\basic_config.h
 	<cstdio>
@@ -397,20 +398,22 @@
 1482309389 d:\codeblocks_codes\cardisplayer20161221\game.h
 	"config.h"
 
-1482486418 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
+1482891909 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
 	"Game.h"
 	"ResourceManager.h"
 	"AnimationManager.h"
 	"EventManager.h"
 	"xbutton.h"
+	"sensor.h"
 	"resources_list.hpp"
 	"resources_load.hpp"
 
-1482322642 d:\codeblocks_codes\cardisplayer20161221\animationmanager.h
+1482885775 d:\codeblocks_codes\cardisplayer20161221\animationmanager.h
 	"config.h"
 	<functional>
+	<vector>
 
-1482393774 source:d:\codeblocks_codes\cardisplayer20161221\animationmanager.cpp
+1482892101 source:d:\codeblocks_codes\cardisplayer20161221\animationmanager.cpp
 	"AnimationManager.h"
 	<vector>
 	<algorithm>
@@ -424,14 +427,22 @@
 	"config.h"
 	<functional>
 
-1482484721 d:\codeblocks_codes\cardisplayer20161221\resources_list.hpp
+1482841068 d:\codeblocks_codes\cardisplayer20161221\resources_list.hpp
 
-1482485321 d:\codeblocks_codes\cardisplayer20161221\resources_load.hpp
+1482891443 d:\codeblocks_codes\cardisplayer20161221\resources_load.hpp
 
-1482486340 d:\codeblocks_codes\cardisplayer20161221\xbutton.h
+1482841525 d:\codeblocks_codes\cardisplayer20161221\xbutton.h
 	"config.h"
 	"EventManager.h"
+	"ResourceManager.h"
 
-1482486312 source:d:\codeblocks_codes\cardisplayer20161221\xbutton.cpp
+1482843500 source:d:\codeblocks_codes\cardisplayer20161221\xbutton.cpp
 	"xbutton.h"
+	"ResourceManager.h"
+
+1482835827 d:\codeblocks_codes\cardisplayer20161221\sensor.h
+	"config.h"
+
+1482835861 source:d:\codeblocks_codes\cardisplayer20161221\sensor.cpp
+	"sensor.h"
 

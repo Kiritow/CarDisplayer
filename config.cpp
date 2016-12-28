@@ -11,3 +11,5 @@ namespace Global
         exit(0);
     }
 }
+
+function<int()> empty_call=[&](){return 1;};

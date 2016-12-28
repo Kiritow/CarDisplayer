@@ -63,6 +63,8 @@
 		<Unit filename="resources_load.hpp" />
 		<Unit filename="sdl_engine.cpp" />
 		<Unit filename="sdl_engine.h" />
+		<Unit filename="sensor.cpp" />
+		<Unit filename="sensor.h" />
 		<Unit filename="xbutton.cpp" />
 		<Unit filename="xbutton.h" />
 		<Extensions>

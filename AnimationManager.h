@@ -1,6 +1,7 @@
 #pragma once
 #include "config.h"
 #include <functional>
+#include <vector>
 using namespace std;
 
 typedef int AnimationID;
@@ -57,3 +58,34 @@ private:
     struct impl;
     impl* pimpl;
 };
+
+void ShowPictureVec(vector<SDL_Texture*> vec);
+
+template<typename T>
+void PushPictureVec(vector<T>& vec,T Picture)
+{
+    vec.push_back(Picture);
+}
+
+template<typename T,typename... Args>
+void PushPictureVec(vector<T>& vec,T Picture,Args&&... args)
+{
+    vec.push_back(Picture);
+    PushPictureVec(vec,args...);
+}
+
+template<typename T,typename... Args>
+void PictureScoller(T Picture,Args... args)
+{
+    vector<T> vec;
+    PushPictureVec(vec,Picture,args...);
+    ShowPictureVec(vec);
+}
+
+template<typename T>
+void PictureScoller(T Picture)
+{
+    vector<T> vec;
+    PushPictureVec(vec,Picture);
+    ShowPictureVec(vec);
+}

@@ -143,3 +143,122 @@ int PlayList::playNext(int ClearScreen,int PresentScreen)
 
     return ret;
 }
+
+void ShowPictureVec(vector<SDL_Texture*> vec)
+{
+    int maxy=0;
+
+    vector<pair<int,int>> info;
+    for(auto& x:vec)
+    {
+        int w,h;
+        SDL_QueryTexture(x,NULL,NULL,&w,&h);
+        info.push_back(pair<int,int>(w,h));
+        maxy+=h;
+    }
+
+    maxy-=WIN_HEIGHT;
+
+    int sz=info.size();
+
+    int cy=0;
+
+    int running=1;
+    SDL_Event e;
+    int update=1;
+
+    while(running)
+    {
+        while(!update&&SDL_WaitEvent(&e))
+        {
+            switch(e.type)
+            {
+            case SDL_QUIT:
+                update=1;
+                running=0;
+                break;
+            case SDL_MOUSEWHEEL:
+                {
+                    update=1;
+                    switch(e.wheel.y<0)
+                    {
+                    case 0:
+                        cy=cy-WIN_WIDTH/3*2;
+                        cy=max(cy,0);
+                        break;
+                    case 1:
+                        cy=cy+WIN_WIDTH/3*2;
+                        cy=min(cy,maxy);
+                        break;
+                    }
+                }
+            case SDL_KEYDOWN:
+                {
+                    if(e.key.keysym.sym==SDLK_ESCAPE)
+                    {
+                        running=0;
+                        update=1;
+                    }
+                }
+                break;
+            }
+        }
+
+        SDL_RenderClear(rnd);
+        int tny=0;
+        for(int i=0;i<sz;i++)
+        {
+            if(tny<=cy)
+            {
+                printf("%d %d\n",tny+info.at(i).second,cy+WIN_HEIGHT);
+
+                if(tny+info.at(i).second>=cy+WIN_HEIGHT)
+                {
+                    /// ONLY 1 Picture
+                    SDL_Rect rect;
+                    rect.x=390;
+                    rect.w=1530-390;
+                    rect.h=WIN_HEIGHT;
+                    rect.y=cy-tny;
+                    SDL_RenderCopy(rnd,vec.at(i),&rect,NULL);
+                    break;
+                }
+                else
+                {
+                    /// Upper Half of Screen
+                    SDL_Rect rect;
+                    rect.x=390;
+                    rect.w=1530-390;
+                    rect.h=info.at(i).second-(cy-tny);
+                    rect.y=cy-tny;
+
+                    SDL_Rect dest;
+                    dest.x=0;
+                    dest.y=0;
+                    dest.w=WIN_WIDTH;
+                    dest.h=rect.h;
+
+                    SDL_RenderCopy(rnd,vec.at(i),&rect,&dest);
+
+                    rect.x=390;
+                    rect.w=1530-390;
+                    rect.h=WIN_HEIGHT-(info.at(i).second-(cy-tny));
+                    rect.y=0;
+
+                    dest.x=0;
+                    dest.y=info.at(i).second-(cy-tny);
+                    dest.w=WIN_WIDTH;
+                    dest.h=WIN_HEIGHT-(info.at(i).second-(cy-tny));
+
+                    SDL_RenderCopy(rnd,vec.at(i+1),&rect,&dest);
+                    break;
+                }
+            }
+
+            tny+=info.at(i).second;
+        }
+        SDL_RenderPresent(rnd);
+
+        update=0;
+    }
+}
