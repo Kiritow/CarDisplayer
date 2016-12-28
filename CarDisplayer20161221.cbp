@@ -56,6 +56,52 @@
 		<Unit filename="basic_config.h" />
 		<Unit filename="config.cpp" />
 		<Unit filename="config.h" />
+		<Unit filename="ex/Engine.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="ex/Engine.h" />
+		<Unit filename="ex/SUV.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="ex/SUV.h" />
+		<Unit filename="ex/abstract_car.h" />
+		<Unit filename="ex/automobile.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="ex/automobile.h" />
+		<Unit filename="ex/bus.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="ex/bus.h" />
+		<Unit filename="ex/car.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="ex/car.h" />
+		<Unit filename="ex/minibus.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="ex/minibus.h" />
+		<Unit filename="ex/pick_up.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="ex/pick_up.h" />
+		<Unit filename="ex/sports_car.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="ex/sports_car.h" />
+		<Unit filename="ex/truck.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="ex/truck.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="mini_engine_min.cpp" />
 		<Unit filename="mini_engine_min.h" />
