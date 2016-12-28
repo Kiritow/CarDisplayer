@@ -8,7 +8,9 @@ int main()
     font=TTF_OpenFont("msyh.ttf",18);
     mlog("Window Opened. Renderer Ready. Font Ready.");
     animemanager.setRenderer(rnd);
+    Game::StartMusicPlayer();
     Game::Main();
+    Game::StopMusicPlayer();
     mlog("Start Finalize...");
     TTF_CloseFont(font);
     SDL_DestroyRenderer(rnd);

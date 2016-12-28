@@ -19,6 +19,20 @@
 
 namespace Game
 {
+    Mix_Music* _internal_music;
+
+    void StartMusicPlayer()
+    {
+        _internal_music=Mix_LoadMUS("mp3\\bgm.mp3");
+        Mix_PlayMusic(_internal_music,-1);
+    }
+
+    void StopMusicPlayer()
+    {
+        Mix_FadeOutMusic(1);
+        Mix_FreeMusic(_internal_music);
+    }
+
     int procInit(void* args)
     {
         int* pRunning=(int*)args;

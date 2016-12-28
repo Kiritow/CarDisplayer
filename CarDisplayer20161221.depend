@@ -348,7 +348,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1482818585 source:d:\codeblocks_codes\cardisplayer20161221\main.cpp
+1482898259 source:d:\codeblocks_codes\cardisplayer20161221\main.cpp
 	"mini_engine_min.h"
 
 1482842891 source:d:\codeblocks_codes\cardisplayer20161221\config.cpp
@@ -371,7 +371,7 @@
 1482311025 d:\codeblocks_codes\cardisplayer20161221\sdl_engine.h
 	"basic_config.h"
 
-1482310790 source:d:\codeblocks_codes\cardisplayer20161221\initmanager.cpp
+1482898889 source:d:\codeblocks_codes\cardisplayer20161221\initmanager.cpp
 	"InitManager.h"
 
 1482310774 d:\codeblocks_codes\cardisplayer20161221\initmanager.h
@@ -395,10 +395,10 @@
 1482311014 source:d:\codeblocks_codes\cardisplayer20161221\sdl_engine.cpp
 	"sdl_engine.h"
 
-1482309389 d:\codeblocks_codes\cardisplayer20161221\game.h
+1482897984 d:\codeblocks_codes\cardisplayer20161221\game.h
 	"config.h"
 
-1482892735 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
+1482898147 source:d:\codeblocks_codes\cardisplayer20161221\game.cpp
 	"Game.h"
 	"ResourceManager.h"
 	"AnimationManager.h"

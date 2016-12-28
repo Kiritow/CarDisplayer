@@ -4,4 +4,6 @@
 namespace Game
 {
     void Main();
+    void StartMusicPlayer();
+    void StopMusicPlayer();
 }
